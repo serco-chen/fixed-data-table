@@ -154,6 +154,12 @@ var FixedDataTable = React.createClass({
     rowClassNameGetter: PropTypes.func,
 
     /**
+     * To get any additional CSS classes that should be added to a row wrapper,
+     * `rowWrapperClassNameGetter(index)` is called.
+     */
+    rowWrapperClassNameGetter: PropTypes.func,
+
+    /**
      * Pixel height of the column group header.
      */
     groupHeaderHeight: PropTypes.number,
@@ -598,6 +604,7 @@ var FixedDataTable = React.createClass({
         onRowMouseEnter={state.onRowMouseEnter}
         onRowMouseLeave={state.onRowMouseLeave}
         rowClassNameGetter={state.rowClassNameGetter}
+        rowWrapperClassNameGetter={state.rowWrapperClassNameGetter}
         rowsCount={state.rowsCount}
         rowGetter={state.rowGetter}
         rowHeightGetter={state.rowHeightGetter}
