@@ -37,6 +37,7 @@ var FixedDataTableBufferedRows = React.createClass({
     onRowMouseEnter: PropTypes.func,
     onRowMouseLeave: PropTypes.func,
     rowClassNameGetter: PropTypes.func,
+    rowWrapperClassNameGetter: PropTypes.func,
     rowsCount: PropTypes.number.isRequired,
     rowHeightGetter: PropTypes.func,
     rowPositionGetter: PropTypes.func.isRequired,
@@ -114,6 +115,7 @@ var FixedDataTableBufferedRows = React.createClass({
   render() /*object*/ {
     var props = this.props;
     var rowClassNameGetter = props.rowClassNameGetter || emptyFunction;
+    var rowWrapperClassNameGetter = props.rowWrapperClassNameGetter || emptyFunction;
     var rowPositionGetter = props.rowPositionGetter;
 
     var rowsToRender = this.state.rowsToRender;
@@ -143,6 +145,7 @@ var FixedDataTableBufferedRows = React.createClass({
           onMouseDown={props.onRowMouseDown}
           onMouseEnter={props.onRowMouseEnter}
           onMouseLeave={props.onRowMouseLeave}
+          wrapperClassName={rowWrapperClassNameGetter(rowIndex)}
           className={joinClasses(
             rowClassNameGetter(rowIndex),
             cx('public/fixedDataTable/bodyRow'),

@@ -181,6 +181,12 @@ var TransitionTable = React.createClass({
     rowClassNameGetter: PropTypes.func,
 
     /**
+     * To get any additional CSS classes that should be added to a row wrapper,
+     * `rowWrapperClassNameGetter(index)` is called.
+     */
+    rowWrapperClassNameGetter: PropTypes.func,
+
+    /**
      * Pixel height of the column group header.
      */
     groupHeaderHeight: PropTypes.number,
